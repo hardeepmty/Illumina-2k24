@@ -1,6 +1,7 @@
 
 import EventTable from "@/components/table_view"
 import Gallery from "@/components/gallery"
+import CardComponent from "@/components/fixtures"
 
 
 export default function Home() {
@@ -9,6 +10,8 @@ export default function Home() {
       <br></br>
       <Gallery/>
       <EventTable/>
+      <CardComponent/>
+
     </main>
   )
 }
