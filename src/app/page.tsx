@@ -1,5 +1,5 @@
 
-import MaterialUITable from './components/table'
+import MaterialUITable from "@/components/table"
 
 
 export default function Home() {
