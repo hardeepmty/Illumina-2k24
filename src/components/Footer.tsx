@@ -12,7 +12,7 @@ function Footer() {
         bgcolor: "#f1f1f1",
         position: "static",
         maxWidth: "100%",
-        padding:"10px",
+        padding:"15px",
       }}
     >
       <Stack sx={{ flexDirection: "row", gap: "5px", ml: "0px" }}>

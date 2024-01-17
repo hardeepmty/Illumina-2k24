@@ -38,7 +38,7 @@ const Navbar = () => {
     <div>
       <AppBar position="fixed">
         <Toolbar sx={{ justifyContent: 'space-between', bgcolor:"#f1f1f1" }}>
-          <Typography variant="h6" component="div" sx={{color:"black"}}>
+          <Typography variant="h6" component="div" sx={{color:"black", fontWeight:"500"}}>
             ILLUMINA
           </Typography>
           {isMobileView ? (
