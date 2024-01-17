@@ -1,11 +1,11 @@
 
-import MaterialUITable from "@/components/table"
+import EventTable from "@/components/table"
 
 
 export default function Home() {
   return (
     <main  style={{backgroundColor:"white"}}>
-      <MaterialUITable/>
+      <EventTable/>
     </main>
   )
 }

@@ -9,7 +9,7 @@ import {
   TableContainer,
 } from "@mui/material";
 
-const MaterialUITable: React.FC = () => {
+const EventTable: React.FC = () => {
   const [isFlexRow, setIsFlexRow] = useState<boolean>(false);
   const rows = Array.from({ length: 10 }, (_, index) => index + 1);
 
@@ -112,4 +112,4 @@ const cellStyle: React.CSSProperties = {
   height: "80px",
 };
 
-export default MaterialUITable;
+export default EventTable;
