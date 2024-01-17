@@ -1,4 +1,4 @@
-"use client";
+
 import React, { useState, useEffect } from "react";
 import {
   Table,
@@ -8,108 +8,90 @@ import {
   Stack,
   TableContainer,
 } from "@mui/material";
-
-const EventTable: React.FC = () => {
-  const [isFlexRow, setIsFlexRow] = useState<boolean>(false);
-  const rows = Array.from({ length: 10 }, (_, index) => index + 1);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const screenWidth = window.innerWidth;
-      setIsFlexRow(screenWidth > 1200); 
-    };
-
-   
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+interface TableComponentProps {
+  eventData: Array<{ time: string; event: string }>;
+}
+const TableComponent: React.FC<TableComponentProps> = ({ eventData }) => {
 
   return (
-    <TableContainer style={{padding:"5%"}}>
-     <Stack direction={isFlexRow ? "row" : "column"} spacing={4} style={{alignItems:"center",justifyContent:"center"}}>
-      <Table sx={{ width: { xs: '100%', sm: '100%', md: '80%', lg: '70%', xl: '70%' } }}>
-        <TableBody>
-          <TableRow>
-            <TableCell
-              style={{
-                ...cellStyle,
-                width: "10%",
-                overflow: "hidden",
-                maxHeight: "100px",
-                writingMode: "vertical-rl",
-                textOrientation: "mixed",
-                whiteSpace: "nowrap",
-                fontWeight: "1000",
-              }}
-              rowSpan={11}
-            >
-              Day 1
-            </TableCell>
+    <Table
+      sx={{ width: { xs: "100%", sm: "100%", md: "80%", lg: "70%", xl: "70%" } }}
+    >
+      <TableBody>
+        <TableRow>
+          <TableCell
+            style={{
+              border: "1px solid black",
+              padding: "8px",
+              textAlign: "center",
+              height: "80px",
+              width: "10%",
+              overflow: "hidden",
+              maxHeight: "100px",
+              writingMode: "vertical-rl",
+              textOrientation: "mixed",
+              whiteSpace: "nowrap",
+              fontWeight: "1000",
+              fontSize:"2rem",
+            }}
+            rowSpan={11}
+          >
+            Day 1
+          </TableCell>
 
-            <TableCell style={{ ...cellStyle, fontWeight: "1000" }}>
-              Time
-            </TableCell>
-            <TableCell style={{ ...cellStyle, fontWeight: "1000" }}>
+          <TableCell
+            style={{
+              border: "1px solid black",
+              padding: "8px",
+              textAlign: "center",
+              height: "80px",
+              fontWeight: "1000",
+              fontSize:"2rem",
+            }}
+          >
+            Time
+          </TableCell>
+
+          <TableCell
+            style={{
+              border: "1px solid black",
+              padding: "8px",
+              textAlign: "center",
+              height: "80px",
+              fontWeight: "1000",
+              fontSize:"2rem",
+            }}
+          >
             Event
-            </TableCell>
-          </TableRow>
-          {rows.map((row, index) => (
-            <TableRow key={row}>
-              <TableCell style={{ ...cellStyle, width: "25%" }}></TableCell>
-              <TableCell style={{ ...cellStyle, width: "50%" }}></TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-
-      <Table sx={{ width: { xs: '100%', sm: '100%', md: '80%', lg: '70%', xl: '70%' } }}>
-        <TableBody>
-          <TableRow>
+          </TableCell>
+        </TableRow>
+        {eventData.map((data, index) => (
+          <TableRow key={index}>
             <TableCell
               style={{
-                ...cellStyle,
-                width: "10%",
-                overflow: "hidden",
-                maxHeight: "100px",
-                writingMode: "vertical-rl",
-                textOrientation: "mixed",
-                whiteSpace: "nowrap",
-                fontWeight: "1000",
+                border: "1px solid black",
+                padding: "8px",
+                textAlign: "center",
+                height: "80px",
+                width: "25%",
+                fontSize:"1rem",
               }}
-              rowSpan={11}
-            >
-              Day 1
-            </TableCell>
-
-            <TableCell style={{ ...cellStyle, fontWeight: "1000" }}>
-              Time
-            </TableCell>
-            <TableCell style={{ ...cellStyle, fontWeight: "1000" }}>
-              Event
-            </TableCell>
+            >{data.time}</TableCell>
+            <TableCell
+              style={{
+                border: "1px solid black",
+                padding: "8px",
+                textAlign: "center",
+                height: "80px",
+                width: "50%",
+                fontSize:"1rem",
+              }}
+            >{data.event}</TableCell>
           </TableRow>
-          {rows.map((row, index) => (
-            <TableRow key={row}>
-              <TableCell style={{ ...cellStyle, width: "25%" }}></TableCell>
-              <TableCell style={{ ...cellStyle, width: "50%" }}></TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </Stack>
-    </TableContainer>
+        ))}
+      </TableBody>
+    </Table>
   );
 };
 
-const cellStyle: React.CSSProperties = {
-  border: "1px solid black",
-  padding: "8px",
-  textAlign: "center",
-  height: "80px",
-};
-
-export default EventTable;
+export default TableComponent;

@@ -12,6 +12,18 @@ interface Image {
   alt: string;
 }
 
+interface SliderSettings {
+  dots: boolean;
+  infinite: boolean;
+  speed: number;
+  slidesToShow: number;
+  slidesToScroll: number;
+  initialSlide: number;
+  autoplay: boolean;
+  arrows: boolean;
+  autoplaySpeed: number;
+}
+
 const Gallery: React.FC = () => {
   const imageList: Image[] = [
     { src: "/1.jpg", alt: "Image 1" },
@@ -85,15 +97,3 @@ const Gallery: React.FC = () => {
 };
 
 export default Gallery;
-
-interface SliderSettings {
-  dots: boolean;
-  infinite: boolean;
-  speed: number;
-  slidesToShow: number;
-  slidesToScroll: number;
-  initialSlide: number;
-  autoplay: boolean;
-  arrows: boolean;
-  autoplaySpeed: number;
-}
