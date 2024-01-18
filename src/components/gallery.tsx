@@ -83,9 +83,9 @@ const Gallery: React.FC = () => {
                 height="0"
                 sizes="(max-width: 300px) 100vw, (max-width: 500px) 500px, (max-width: 700px) 700px, 700px"
                 style={{
-                  width: "100%", // Make the image responsive within its container
-                  height: "auto", // Maintain the aspect ratio
-                  maxWidth: "100%", // Ensure the image doesn't exceed its container's width
+                  width: "100%", 
+                  height: "auto", 
+                  maxWidth: "100%", 
                 }}
               />
             </Card>
