@@ -1,16 +1,15 @@
-import styles from './page.module.css'
-import Footer from '../components/Footer'
-import Members from '../components/Members'
-import Navbar from '../components/Navbar'
-
-
+import Footer from '../components/Footer';
+import Members from '../components/Members';
+import Navbar from '../components/Navbar';
+import Shirt from '../components/Shirt';  
 
 export default function Home() {
   return (
     <main>
-      <Navbar/>
-      <Members/>
-      <Footer/>
+      <Navbar />
+      <Shirt />
+      <Members />
+      <Footer />
     </main>
-  )
+  );
 }
