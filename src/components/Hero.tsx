@@ -6,8 +6,8 @@ import Button from '@mui/material/Button';
 
 function Hero() {
   return (
-    <Stack position="relative" minHeight="100vh" display="flex" alignItems="center" justifyContent="center" sx={{ marginBottom: 0 }}>
-      <Image src="/hero.jpg" alt="hero" width={1510} height={800} style={{ width: '100%', height: '100vh', objectFit: 'cover' }} />
+    <Stack position="relative" minHeight="100vh" display="flex" alignItems="center" justifyContent="center" sx={{ marginBottom: 0, bgcolor:"black" }}>
+      <Image src="/hero.jpg" alt="hero" width={1510} height={800} style={{ width: '100%', height: '100vh', objectFit: 'cover', opacity:"50%", filter:"blur(2px)" }} />
       <Typography
         variant="h2"
         component="div"

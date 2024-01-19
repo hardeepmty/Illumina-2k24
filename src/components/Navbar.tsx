@@ -16,10 +16,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const isMobileView = useMediaQuery('(max-width: 600px)'); // Adjust the breakpoint as needed
+  const isMobileView = useMediaQuery('(max-width: 600px)'); 
 
   const trigger = useScrollTrigger({
-    threshold: 100, // Set the threshold as needed
+    threshold: 50, 
   });
 
   const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
