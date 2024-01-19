@@ -21,7 +21,7 @@ export default function Shirt() {
         sx={{
           fontWeight: "bold",
           fontSize: { xs: "30px", md: "68px" },
-          mt: { xs: "30px", md: "30px" }, 
+          mt: { xs: "25px", md: "30px" }, 
           textAlign: { xs: "center", md: "left" },
         }}
       >
@@ -29,8 +29,9 @@ export default function Shirt() {
       </Typography>
       </Stack>
 
-      <Stack sx={{ maxWidth:"30%"}}>
+      <Stack sx={{ maxWidth:"30%", mt:{xs:"0px"}}}>
       <Image
+        className='image'
         src={IlluminaLogo}
         alt='shirt'
         style={{

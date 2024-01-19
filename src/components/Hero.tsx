@@ -36,7 +36,7 @@ function Hero() {
           fontSize:{xs:"15px", sm:"20px", md:"25px"}
         }}
       >
-        27 and 28 January, VSSUT, Burla
+        27th and 28th January, VSSUT, Burla
       </Typography>
       <Button
         variant="contained"

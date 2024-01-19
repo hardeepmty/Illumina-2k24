@@ -44,7 +44,7 @@ const Navbar = () => {
       <AppBar position="fixed" sx={{ 
         backgroundColor: trigger ? '#f1f1f1' : 'transparent', 
         transition: 'background-color 0.5s ease',
-        boxShadow: 'none'
+        boxShadow: 'none',
       }}>
         <Toolbar sx={{ justifyContent: 'space-between' }}>
           <Typography variant="h6" component="div" sx={{ color: trigger ? 'black' : 'white', fontWeight: '500' }}>

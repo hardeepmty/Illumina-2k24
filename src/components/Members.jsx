@@ -3,6 +3,7 @@ import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
 import React from 'react';
 import memberData from '@/library/data/memberData';
+import ScoreCard from './HouseCard';
 
 
 function Members() {
@@ -24,13 +25,14 @@ function Members() {
             key={member.id}
             sx={{
               gap: '5px',
-              bgcolor: 'white',
+              bgcolor: '#f1f1f1',
               border: '2px solid black',
               borderRadius: '8px',
               minWidth: '100px',
               justifyContent: 'center',
               padding: '10px',
               mb: '20px',
+              
             }}
           >
             <Avatar alt={member.name} src={`/majhi.jpeg`} sx={{ width: 55, height: 55, ml: '5px' }} />

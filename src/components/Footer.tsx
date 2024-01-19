@@ -12,7 +12,6 @@ function Footer() {
         position: "static",
         maxWidth: "100%",
         padding:"15px",
-        overflowY:"hidden"
       }}
     >
       <Stack sx={{ flexDirection: "row", gap: "5px", ml: "0px" }}>
