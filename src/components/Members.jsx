@@ -7,7 +7,7 @@ import memberData from '@/library/data/memberData';
 
 function Members() {
   return (
-    <Stack sx={{ gap: '20px', padding: '20px', justifyContent: 'space-between', mt: '500px', mb: '25px' }}>
+    <Stack sx={{ gap: '20px', padding: '20px', justifyContent: 'space-between', mt: '500px', mb: '25px', overflowX:"hidden" }}>
       <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
         ADMINISTRATION
       </Typography>
@@ -15,8 +15,8 @@ function Members() {
       <Stack
         sx={{
           display: 'grid',
-          gridTemplateColumns: { xs: 'repeat(2)', md: 'repeat(4, 1fr)' },
-          gap: { xs: '20px', md: '10px' },
+          gridTemplateColumns: { xs: 'repeat(2,1fr)', md: 'repeat(4, 1fr)' },
+          gap: { xs: '5px', md: '10px' },
         }}
       >
         {memberData.map((member) => (
@@ -27,7 +27,7 @@ function Members() {
               bgcolor: 'white',
               border: '2px solid black',
               borderRadius: '8px',
-              minWidth: '200px',
+              minWidth: '100px',
               justifyContent: 'center',
               padding: '10px',
               mb: '20px',

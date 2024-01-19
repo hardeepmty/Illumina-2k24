@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
 import {
   AppBar,
@@ -10,12 +10,17 @@ import {
   ListItem,
   ListItemText,
   useMediaQuery,
+  useScrollTrigger,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const isMobileView = useMediaQuery('(max-width: 600px)'); // Adjust the breakpoint as needed
+
+  const trigger = useScrollTrigger({
+    threshold: 100, // Set the threshold as needed
+  });
 
   const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
     if (
@@ -36,22 +41,26 @@ const Navbar = () => {
 
   return (
     <div>
-      <AppBar position="fixed">
-        <Toolbar sx={{ justifyContent: 'space-between', bgcolor:"#f1f1f1" }}>
-          <Typography variant="h6" component="div" sx={{color:"black", fontWeight:"500"}}>
+      <AppBar position="fixed" sx={{ 
+        backgroundColor: trigger ? '#f1f1f1' : 'transparent', 
+        transition: 'background-color 0.5s ease',
+        boxShadow: 'none'
+      }}>
+        <Toolbar sx={{ justifyContent: 'space-between' }}>
+          <Typography variant="h6" component="div" sx={{ color: trigger ? 'black' : 'white', fontWeight: '500' }}>
             ILLUMINA
           </Typography>
           {isMobileView ? (
             <IconButton
               size="large"
               aria-label="menu"
-              sx={{color:"black"}}
+              sx={{ color: trigger ? 'black' : 'white' }}
               onClick={toggleDrawer(true)}
             >
               <MenuIcon />
             </IconButton>
           ) : (
-            <List sx={{ display: 'flex', color:"black" }}>
+            <List sx={{ display: 'flex', color: trigger ? 'black' : 'white' }}>
               {navLinks.map((link) => (
                 <ListItem button key={link.text}>
                   <ListItemText primary={link.text} />
@@ -86,4 +95,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

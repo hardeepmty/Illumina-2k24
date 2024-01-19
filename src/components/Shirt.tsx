@@ -24,7 +24,9 @@ export default function Shirt() {
           flexDirection: 'column',
           alignItems: 'center',
         }}
-      ></Stack>
+      >
+        
+      </Stack>
 
       <Stack
         sx={{
