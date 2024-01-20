@@ -33,7 +33,8 @@ function Hero() {
           top: '57%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          fontSize:{xs:"15px", sm:"20px", md:"25px"}
+          fontSize:{xs:"15px", sm:"20px", md:"25px"},
+          mt: { xs: '15px', md: '15px' }, // Add margin-top for responsive design
         }}
       >
         27th and 28th January, VSSUT, Burla
@@ -42,6 +43,7 @@ function Hero() {
         variant="contained"
         size="large"
         sx={{
+          width:"100px",
           position: 'absolute',
           top: '65%', 
           left: '50%',
@@ -50,9 +52,10 @@ function Hero() {
           color: 'white',
           fontWeight: 'bold',
           border: "2px solid white",
+          mt: { xs: '30px', md: '30px' }, 
         }}
       >
-        EXPLORE MORE
+        EXPLORE
       </Button>
     </Stack>
   );
