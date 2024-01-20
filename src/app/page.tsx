@@ -4,9 +4,8 @@ import Navbar from '../components/Navbar';
 import Shirt from '../components/Shirt';  
 import EventTable from "@/components/table_view"
 import Gallery from "@/components/gallery"
+import CardComponent from "@/components/fixtures"
 import styles from './page.module.css'
-
-
 
 export default function Home() {
   return (
@@ -19,6 +18,8 @@ export default function Home() {
       <br></br>
       <Gallery/>
       <EventTable/>
+      <CardComponent/>
+
     </main>
   );
 }
