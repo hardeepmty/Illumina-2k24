@@ -6,13 +6,13 @@ function Footer() {
   return (
     <Stack
       sx={{
-        overflow:"hidden" ,
         justifyContent: "space-between",
         flexDirection: "row",
         bgcolor: "#f1f1f1",
         position: "static",
         maxWidth: "100%",
         padding:"15px",
+        overflowY:"hidden"
       }}
     >
       <Stack sx={{ flexDirection: "row", gap: "5px", ml: "0px" }}>

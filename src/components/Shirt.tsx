@@ -7,40 +7,40 @@ export default function Shirt() {
   return (
     <Stack
       sx={{
-        mt: { xs: '500px', md: '100px' },
-        mb: '50px',
-        bgcolor: 'orange',
-        justifyContent: 'center',
-        alignItems: 'center',
-        overflowX: 'hidden',
+        mt:"200px",
+        bgcolor: "orange",
+        flexDirection: { xs: "column", md: "row" },
+        gap:{xs:"0",md:"50px"},
+        alignItems: "center", 
+        paddingLeft: { md: "130px" }, 
+        paddingRight: { md: "80px" }, 
       }}
     >
-      <Stack
+      <Stack>
+      <Typography
         sx={{
-          whiteSpace: 'nowrap',
-          bgcolor: 'black',
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      ></Stack>
-
-      <Stack
-        sx={{
-          whiteSpace: 'nowrap',
-          ml:{xs:"10px",md:"200px"},
-          mt: '20px',
-          display: 'flex',
-          flexDirection: { xs: 'column', md: 'row' },
-          justifyContent: 'center',
-          alignItems: 'center',
-          gap: '20px',
+          fontWeight: "bold",
+          fontSize: { xs: "30px", md: "68px" },
+          mt: { xs: "30px", md: "30px" }, 
+          textAlign: { xs: "center", md: "left" },
         }}
       >
-        <Typography sx={{ fontWeight: 'bold', fontSize: { xs: '30px', sm: '50px', md: '66px' } }}>GEAR UP FOR GAMEDAY</Typography>
-        <Image src={IlluminaLogo} alt='tshirt' width={380} height={380} />
+        GEAR UP FOR GAMEDAY
+      </Typography>
       </Stack>
+
+      <Stack sx={{ maxWidth:"30%"}}>
+      <Image
+        src={IlluminaLogo}
+        alt='shirt'
+        style={{
+          // backgroundColor: "black",
+          maxWidth: '100%',
+          height:"auto",
+        }}
+      />
+      </Stack>
+
     </Stack>
   );
 }
