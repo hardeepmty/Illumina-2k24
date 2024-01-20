@@ -1,4 +1,6 @@
-import { Stack, Typography, Avatar } from '@mui/material';
+import  Stack  from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import Avatar from '@mui/material/Avatar';
 import React from 'react';
 import memberData from '@/library/data/memberData';
 
@@ -13,7 +15,7 @@ function Members() {
       <Stack
         sx={{
           display: 'grid',
-          gridTemplateColumns: { xs: '1fr', md: 'repeat(4, 1fr)' },
+          gridTemplateColumns: { xs: 'repeat(2)', md: 'repeat(4, 1fr)' },
           gap: { xs: '20px', md: '10px' },
         }}
       >
