@@ -81,11 +81,10 @@ const About0: React.FC = () => {
               variant="h5"
               style={{
                 transform: `rotate(${isMobile ? 0 : 270}deg)`,
-                display: "inline-block",
                 textAlign: "center",
               }}
             >
-              Vertical
+              About Us
             </Typography>
           )}
         </Stack>
@@ -118,7 +117,7 @@ const About0: React.FC = () => {
                 textAlign: "center",
               }}
             >
-              Vertical
+              Illumina
             </Typography>
           )}
         </Stack>
@@ -151,7 +150,7 @@ const About0: React.FC = () => {
                 textAlign: "center",
               }}
             >
-              Vertical
+              Yoga Club
             </Typography>
           )}
         </Stack>

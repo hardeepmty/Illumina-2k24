@@ -58,7 +58,7 @@ const CardContainer: React.FC = () => {
           <Slider {...settings}>
             {cardArray.map(([fixtureKey, data]) => (
               <div key={fixtureKey} style={{ margin: "0 10px" }}>
-                <CustomCard team1={data.team1} team2={data.team2} />
+                <CustomCard team1={data.team1} team2={data.team2} time={data.time} venue={data.venue} sport={data.sport}/>
               </div>
             ))}
           </Slider>
@@ -67,7 +67,7 @@ const CardContainer: React.FC = () => {
         <Grid container spacing={3} justifyContent="center">
           {cardArray.map(([fixtureKey, data]) => (
             <Grid item key={fixtureKey}>
-              <CustomCard team1={data.team1} team2={data.team2} />
+              <CustomCard team1={data.team1} team2={data.team2}  time={data.time} venue={data.venue} sport={data.sport}/>
             </Grid>
           ))}
         </Grid>
