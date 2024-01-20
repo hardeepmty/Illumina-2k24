@@ -10,6 +10,7 @@ import {
   } from "@mui/material";
 import TableComponent from "./table";
 import eventData from "@/lib/data/table1";
+import eventData2 from "@/lib/data/table2";
 
 const EventTable = () => {
     const [isFlexRow, setIsFlexRow] = useState<boolean>(false);
@@ -35,8 +36,8 @@ const EventTable = () => {
           spacing={4}
           style={{ alignItems: "center", justifyContent: "center" }}
         >
-          <TableComponent eventData={eventData} />
-          <TableComponent eventData={eventData} />
+          <TableComponent day={"Day1"} eventData={eventData} />
+          <TableComponent day={"Day2"} eventData={eventData2} />
         </Stack>
       </TableContainer>
     );

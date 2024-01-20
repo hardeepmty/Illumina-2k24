@@ -5,11 +5,14 @@ import Typography from "@mui/material/Typography";
 import { Stack } from "@mui/system";
 
 interface CardProps {
+  sport: string;
   team1: string;
   team2: string;
+  time:  string;
+  venue: string;
 }
 
-const CustomCard: React.FC<CardProps> = ({ team1, team2 }) => {
+const CustomCard: React.FC<CardProps> = ({ team1, team2, time, venue, sport }) => {
   return (
     <Card
       style={{
@@ -47,7 +50,7 @@ const CustomCard: React.FC<CardProps> = ({ team1, team2 }) => {
           justifyContent: "center",
           alignItems: "center",
         }}
-      ><Typography variant="h6" component="div">Sport</Typography></Stack>
+      ><Typography variant="h6" component="div">{`${sport}`}</Typography></Stack>
       <CardContent
         style={{
           display: "flex",
@@ -96,8 +99,8 @@ const CustomCard: React.FC<CardProps> = ({ team1, team2 }) => {
           height: "20%",
         }}
       >
-        <Typography variant="body1" component="div">Time:</Typography>
-        <Typography variant="body1" component="div">Venue:</Typography>
+        <Typography variant="body1" component="div">Time:{`${time}`}</Typography>
+        <Typography variant="body1" component="div">Venue:{`${venue}`}</Typography>
       </Stack>
     </Card>
   );

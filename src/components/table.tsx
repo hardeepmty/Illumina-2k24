@@ -1,21 +1,31 @@
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   Table,
   TableBody,
   TableRow,
   TableCell,
-  Stack,
-  TableContainer,
+  useTheme,
 } from "@mui/material";
+
 interface TableComponentProps {
   eventData: Array<{ time: string; event: string }>;
+  day: string;
 }
-const TableComponent: React.FC<TableComponentProps> = ({ eventData }) => {
+
+const TableComponent: React.FC<TableComponentProps> = ({ eventData, day }) => {
+  const theme = useTheme();
 
   return (
     <Table
-      sx={{ width: { xs: "100%", sm: "100%", md: "80%", lg: "70%", xl: "70%" } }}
+      sx={{
+        width: "100%",
+        [theme.breakpoints.up("md")]: {
+          width: "80%",
+        },
+        [theme.breakpoints.up("lg")]: {
+          width: "70%",
+        },
+      }}
     >
       <TableBody>
         <TableRow>
@@ -32,11 +42,11 @@ const TableComponent: React.FC<TableComponentProps> = ({ eventData }) => {
               textOrientation: "mixed",
               whiteSpace: "nowrap",
               fontWeight: "1000",
-              fontSize:"2rem",
+              fontSize: "2rem",
             }}
             rowSpan={11}
           >
-            Day 1
+            {day}
           </TableCell>
 
           <TableCell
@@ -46,7 +56,7 @@ const TableComponent: React.FC<TableComponentProps> = ({ eventData }) => {
               textAlign: "center",
               height: "80px",
               fontWeight: "1000",
-              fontSize:"2rem",
+              fontSize: "2rem",
             }}
           >
             Time
@@ -59,7 +69,7 @@ const TableComponent: React.FC<TableComponentProps> = ({ eventData }) => {
               textAlign: "center",
               height: "80px",
               fontWeight: "1000",
-              fontSize:"2rem",
+              fontSize: "2rem",
             }}
           >
             Event
@@ -74,9 +84,11 @@ const TableComponent: React.FC<TableComponentProps> = ({ eventData }) => {
                 textAlign: "center",
                 height: "80px",
                 width: "25%",
-                fontSize:"1rem",
+                fontSize: "1rem",
               }}
-            >{data.time}</TableCell>
+            >
+              {data.time}
+            </TableCell>
             <TableCell
               style={{
                 border: "1px solid black",
@@ -84,9 +96,11 @@ const TableComponent: React.FC<TableComponentProps> = ({ eventData }) => {
                 textAlign: "center",
                 height: "80px",
                 width: "50%",
-                fontSize:"1rem",
+                fontSize: "1rem",
               }}
-            >{data.event}</TableCell>
+            >
+              {data.event}
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>

@@ -32,6 +32,7 @@ const Gallery: React.FC = () => {
     { src: "/4.jpg", alt: "Image 4" },
     { src: "/5.jpg", alt: "Image 5" },
     { src: "/6.jpg", alt: "Image 6" },
+  
   ];
 
   const settings: SliderSettings = {
