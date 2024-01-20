@@ -12,16 +12,29 @@ import cardsData from "@/lib/data/match_fixtures";
 const CardContainer: React.FC = () => {
   const cardArray = Object.entries(cardsData);
 
-  const settings = {
-    // dots: true,
+  interface SliderSettings {
+
+    infinite: boolean;
+    speed: number;
+    slidesToShow: number;
+    slidesToScroll: number;
+    centerMode: boolean;
+    centerPadding: string;
+    autoplay: boolean;
+    autoplaySpeed: number;
+  }
+  
+  const settings: SliderSettings = {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,
     centerPadding: "0",
+    autoplay: true,
+    autoplaySpeed: 5000,
   };
-
+  
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
