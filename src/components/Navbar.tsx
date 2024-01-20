@@ -13,6 +13,7 @@ import {
   useScrollTrigger,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -42,14 +43,15 @@ const Navbar = () => {
   return (
     <div>
       <AppBar position="fixed" sx={{ 
-        backgroundColor: trigger ? '#f1f1f1' : 'transparent', 
+        backgroundColor: trigger ? '#7D7B7E' : 'transparent', 
         transition: 'background-color 0.5s ease',
-        boxShadow: 'none'
+        boxShadow: 'none',
       }}>
         <Toolbar sx={{ justifyContent: 'space-between' }}>
-          <Typography variant="h6" component="div" sx={{ color: trigger ? 'black' : 'white', fontWeight: '500' }}>
+          {/* <Typography variant="h6" component="div" sx={{ color: trigger ? 'black' : 'white', fontWeight: '500' }}>
             ILLUMINA
-          </Typography>
+          </Typography> */}
+          <Image className='illumina' src="/illumina 2024.png" alt='illumina' width={70} height={70}/>
           {isMobileView ? (
             <IconButton
               size="large"
@@ -60,7 +62,7 @@ const Navbar = () => {
               <MenuIcon />
             </IconButton>
           ) : (
-            <List sx={{ display: 'flex', color: trigger ? 'black' : 'white' }}>
+            <List sx={{ display: 'flex', color: trigger ? 'white' : 'white' }}>
               {navLinks.map((link) => (
                 <ListItem button key={link.text}>
                   <ListItemText primary={link.text} />
