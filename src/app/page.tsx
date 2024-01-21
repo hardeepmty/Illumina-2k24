@@ -9,22 +9,22 @@ import Gallery from "@/components/gallery"
 import CardComponent from "@/components/fixtures"
 import About0 from "@/components/about_us"
 import styles from './page.module.css'
+import LiveFeed from '@/components/liveScore';
 
 export default function Home() {
   return (
     <main style={{backgroundColor:"white"}}>
       <Navbar />
       <Hero />
-      <Shirt />
-      <ScoreCard/>
-      <Members />
-      <Footer />
-
-      <br></br>
+      <LiveFeed/>
       <Gallery/>
       <EventTable/>
       <About0/>
       <CardComponent/>
+      <Shirt />
+      <ScoreCard/>
+      <Members />
+      <Footer />
     </main>
   );
 }
