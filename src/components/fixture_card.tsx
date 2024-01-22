@@ -15,11 +15,12 @@ interface CardProps {
 const CustomCard: React.FC<CardProps> = ({ team1, team2, time, venue, sport }) => {
   return (
     <Card
+      className="fix"
       style={{
         border: "1px solid #000000",
         width: "200px",
         height: "300px",
-        backgroundColor: "#ef701f",
+        // backgroundColor: "#DD7C2C",
         position: "relative", 
       }}
     >
@@ -50,7 +51,7 @@ const CustomCard: React.FC<CardProps> = ({ team1, team2, time, venue, sport }) =
           justifyContent: "center",
           alignItems: "center",
         }}
-      ><Typography variant="h6" component="div">{`${sport}`}</Typography></Stack>
+      ><Typography variant="h6" component="div" sx={{color:"white"}}>{`${sport}`}</Typography></Stack>
       <CardContent
         style={{
           display: "flex",
@@ -66,14 +67,14 @@ const CustomCard: React.FC<CardProps> = ({ team1, team2, time, venue, sport }) =
           style={{
             width: "100%",
             height: "100%",
-            backgroundColor: "#debbaf",
+            backgroundColor: "#c1c1c1",
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "space-around",
           }}
         >
-          <Typography variant="body1" component="div">
+          <Typography variant="body1" component="div" sx={{color:"white"}}>
             {`${team1}`}
           </Typography>
         </Card>
@@ -81,14 +82,14 @@ const CustomCard: React.FC<CardProps> = ({ team1, team2, time, venue, sport }) =
           style={{
             width: "100%",
             height: "100%",
-            backgroundColor: "#debbaf",
+            backgroundColor: "#A6A6A6",
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "space-around",
           }}
         >
-          <Typography variant="body1" component="div">
+          <Typography variant="body1" component="div" sx={{color:"white"}}>
             {`${team2}`}
           </Typography>
         </Card>

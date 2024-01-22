@@ -9,22 +9,22 @@ import Gallery from "@/components/gallery"
 import CardComponent from "@/components/fixtures"
 import About0 from "@/components/about_us"
 import styles from './page.module.css'
+import BackToTopButton from '@/components/Button';
 
 export default function Home() {
   return (
-    <main style={{backgroundColor:"white"}}>
+    <main>
       <Navbar />
       <Hero />
+      <About0/>
+      <Gallery/>
       <Shirt />
       <ScoreCard/>
+      <CardComponent/>
+      <EventTable/>
+      <BackToTopButton/>
       <Members />
       <Footer />
-
-      <br></br>
-      <Gallery/>
-      <EventTable/>
-      <About0/>
-      <CardComponent/>
     </main>
   );
 }

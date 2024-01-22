@@ -19,8 +19,8 @@
     "react-dom": "^18",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^6.1.8"
-    "@mui/icons-material": "^5.15.4",
+    "styled-components": "^6.1.8",
+    "@mui/icons-material": "^5.15.4"
   },
   "devDependencies": {
     "@types/node": "^20",
