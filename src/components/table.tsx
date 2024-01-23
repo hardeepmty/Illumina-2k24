@@ -5,8 +5,23 @@ import {
   TableRow,
   TableCell,
   useTheme,
+  createTheme,
+  ThemeProvider,
+  Typography,
 } from "@mui/material";
 
+const theme1 = createTheme({
+  typography: {
+    body1: {
+      fontFamily: "monospace",
+      fontWeight: "bold",
+    },
+    h5:{
+      fontFamily: "monospace",
+      fontWeight: "bold",
+    }
+  },
+});
 interface TableComponentProps {
   eventData: Array<{ time: string; event: string }>;
   day: string;
@@ -17,6 +32,7 @@ const TableComponent: React.FC<TableComponentProps> = ({ eventData, day }) => {
 
   return (
     <Table
+      className="table"
       sx={{
         width: "100%",
         [theme.breakpoints.up("md")]: {
@@ -27,83 +43,92 @@ const TableComponent: React.FC<TableComponentProps> = ({ eventData, day }) => {
         },
       }}
     >
-      <TableBody>
-        <TableRow>
-          <TableCell
-            style={{
-              border: "1px solid black",
-              padding: "8px",
-              textAlign: "center",
-              height: "80px",
-              width: "10%",
-              overflow: "hidden",
-              maxHeight: "100px",
-              writingMode: "vertical-rl",
-              textOrientation: "mixed",
-              whiteSpace: "nowrap",
-              fontWeight: "1000",
-              fontSize: "2rem",
-            }}
-            rowSpan={11}
-          >
-            {day}
-          </TableCell>
-
-          <TableCell
-            style={{
-              border: "1px solid black",
-              padding: "8px",
-              textAlign: "center",
-              height: "80px",
-              fontWeight: "1000",
-              fontSize: "2rem",
-            }}
-          >
-            Time
-          </TableCell>
-
-          <TableCell
-            style={{
-              border: "1px solid black",
-              padding: "8px",
-              textAlign: "center",
-              height: "80px",
-              fontWeight: "1000",
-              fontSize: "2rem",
-            }}
-          >
-            Event
-          </TableCell>
-        </TableRow>
-        {eventData.map((data, index) => (
-          <TableRow key={index}>
+      <ThemeProvider theme={theme1}>
+        <TableBody>
+          <TableRow>
             <TableCell
               style={{
-                border: "1px solid black",
+                border: "1px solid white",
                 padding: "8px",
                 textAlign: "center",
                 height: "80px",
-                width: "25%",
-                fontSize: "1rem",
+                width: "10%",
+                overflow: "hidden",
+                maxHeight: "100px",
+                writingMode: "vertical-rl",
+                textOrientation: "mixed",
+                whiteSpace: "nowrap",
+                fontWeight: "1000",
+                fontSize: "2rem",
+                color: "white",
               }}
+              rowSpan={11}
             >
-              {data.time}
+              <Typography variant="h5">
+              {day}
+              </Typography>
             </TableCell>
+
             <TableCell
               style={{
-                border: "1px solid black",
+                border: "1px solid white",
                 padding: "8px",
                 textAlign: "center",
                 height: "80px",
-                width: "50%",
-                fontSize: "1rem",
+                fontWeight: "1000",
+                fontSize: "2rem",
+                color: "white",
               }}
             >
-              {data.event}
+              Time
+            </TableCell>
+
+            <TableCell
+              style={{
+                border: "1px solid white",
+                padding: "8px",
+                textAlign: "center",
+                height: "80px",
+                fontWeight: "1000",
+                fontSize: "2rem",
+                color: "white",
+              }}
+            >
+              Event
             </TableCell>
           </TableRow>
-        ))}
-      </TableBody>
+          {eventData.map((data, index) => (
+            <TableRow key={index}>
+              <TableCell
+                style={{
+                  border: "1px solid white",
+                  padding: "8px",
+                  textAlign: "center",
+                  height: "80px",
+                  width: "25%",
+                  fontSize: "1rem",
+                  color: "white",
+                }}
+              >
+                <Typography variant="body1">{data.time}</Typography>
+              </TableCell>
+              <TableCell
+                style={{
+                  border: "1px solid white",
+                  padding: "8px",
+                  textAlign: "center",
+                  height: "80px",
+                  width: "50%",
+                  fontSize: "1rem",
+                  color: "white",
+                }}
+              >
+                <Typography variant="body1">{data.event}</Typography>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </ThemeProvider>
     </Table>
   );
 };

@@ -52,7 +52,7 @@ const CardContainer: React.FC = () => {
   }, []);
 
   return (
-    <Box p={3} textAlign="center">
+    <Box p={3} textAlign="center" sx={{mt:"50px"}}>
       {isMobile ? (
         <Stack sx={{ margin: "0 auto", marginTop: "50px", maxWidth: "200px" }}>
           <Slider {...settings}>

@@ -1,8 +1,17 @@
+"use client";
 import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { Stack } from "@mui/system";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Monospace',
+    fontWeightBold:"bolder",
+  },
+});
 
 interface CardProps {
   sport: string;
@@ -14,12 +23,14 @@ interface CardProps {
 
 const CustomCard: React.FC<CardProps> = ({ team1, team2, time, venue, sport }) => {
   return (
+    <ThemeProvider theme={theme}>
     <Card
+      className="fix"
       style={{
         border: "1px solid #000000",
         width: "200px",
         height: "300px",
-        backgroundColor: "#ef701f",
+        // backgroundColor: "#DD7C2C",
         position: "relative", 
       }}
     >
@@ -50,7 +61,7 @@ const CustomCard: React.FC<CardProps> = ({ team1, team2, time, venue, sport }) =
           justifyContent: "center",
           alignItems: "center",
         }}
-      ><Typography variant="h6" component="div">{`${sport}`}</Typography></Stack>
+      ><Typography variant="h6" component="div" sx={{color:"white"}}>{`${sport}`}</Typography></Stack>
       <CardContent
         style={{
           display: "flex",
@@ -66,14 +77,14 @@ const CustomCard: React.FC<CardProps> = ({ team1, team2, time, venue, sport }) =
           style={{
             width: "100%",
             height: "100%",
-            backgroundColor: "#debbaf",
+            background:  "linear-gradient(to bottom, #ff7e00, #ff2f00)",
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "space-around",
           }}
         >
-          <Typography variant="body1" component="div">
+          <Typography variant="body1" component="div" sx={{color:"black"}}>
             {`${team1}`}
           </Typography>
         </Card>
@@ -81,14 +92,14 @@ const CustomCard: React.FC<CardProps> = ({ team1, team2, time, venue, sport }) =
           style={{
             width: "100%",
             height: "100%",
-            backgroundColor: "#debbaf",
+            background:  "linear-gradient(to bottom, #ff7e00, #ff2f00)",
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "space-around",
           }}
         >
-          <Typography variant="body1" component="div">
+          <Typography variant="body1" component="div" sx={{color:"black"}}>
             {`${team2}`}
           </Typography>
         </Card>
@@ -103,6 +114,7 @@ const CustomCard: React.FC<CardProps> = ({ team1, team2, time, venue, sport }) =
         <Typography variant="body1" component="div">Venue:{`${venue}`}</Typography>
       </Stack>
     </Card>
+    </ThemeProvider>
   );
 };
 

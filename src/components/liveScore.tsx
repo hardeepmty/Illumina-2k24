@@ -2,11 +2,12 @@ import React from "react";
 import LiveSport from "./livesport";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+import { Typography } from "@mui/material";
 
 const LiveFeed = () => {
   return (
     <Container>
-      <Grid container spacing={3} justifyContent="center" alignItems="center" padding="20px">
+      <Grid container  display="flex" justifyContent="center" alignItems="center" padding="20px">
         
           <LiveSport title={"Football live"} game={"football"} sport={"football"} />
         

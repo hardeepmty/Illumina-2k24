@@ -4,11 +4,16 @@ import React from 'react';
 import Image from 'next/image';
 import Button from '@mui/material/Button';
 
-function Hero() {
+type HeroProps = {
+  explore: () => void;
+};
+
+function Hero({explore}:HeroProps) {
   return (
     <Stack position="relative" minHeight="100vh" display="flex" alignItems="center" justifyContent="center" sx={{ marginBottom: 0, bgcolor:"black" }}>
       <Image src="/hero.jpg" alt="hero" width={1510} height={800} style={{ width: '100%', height: '100vh', objectFit: 'cover', opacity:"50%", filter:"blur(2px)" }} />
       <Typography
+        className='year'
         variant="h2"
         component="div"
         sx={{
@@ -48,12 +53,13 @@ function Hero() {
           top: '65%', 
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          backgroundColor: 'transparent',
-          color: 'white',
+          backgroundColor: 'orange',
+          color: 'black',
           fontWeight: 'bold',
-          border: "2px solid white",
+          border: "2px solid black",
           mt: { xs: '30px', md: '30px' }, 
         }}
+        onClick={explore}
       >
         EXPLORE
       </Button>
