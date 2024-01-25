@@ -36,7 +36,7 @@ const EventTable = () => {
           spacing={4}
           style={{ alignItems: "center", justifyContent: "center" }}
         >
-          <TableComponent day={"Day1"} eventData={eventData} />
+          <TableComponent day={"Day1"} eventData={eventData}  />
           <TableComponent day={"Day2"} eventData={eventData2} />
         </Stack>
       </TableContainer>

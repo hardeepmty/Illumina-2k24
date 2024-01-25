@@ -5,7 +5,7 @@ import HouseCard from './HouseCard';
 function ScoreCard() {
   return (
     <div>
-       <Grid container spacing={2}>
+       <Grid container spacing={2} className='scoreCard' sx={{mt:"50px"}}>
          <Grid item xs={6} sm={6} md={3}>
            <HouseCard houseName="maitri " gold={5} silver={3} bronze={2} />
          </Grid>

@@ -34,18 +34,19 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { text: 'Home', path: '/' },
-    { text: 'Schedule', path: '/schedule' },
-    { text: 'Events', path: '/events' },
-    { text: 'Administration', path: '/admin' }
+    { text: 'HOME', path: '/' },
+    { text: 'SCHEDULE', path: '/schedule' },
+    { text: 'EVENTS', path: '/events' },
+    { text: 'ADMINISTRATION', path: '/admin' }
   ];
 
   return (
     <div>
-      <AppBar position="fixed" sx={{ 
-        backgroundColor: trigger ? '#7D7B7E' : 'transparent', 
+            <AppBar position="fixed" sx={{ 
+        backgroundColor: trigger ? 'transparent' : 'transparent', 
         transition: 'background-color 0.5s ease',
         boxShadow: 'none',
+        backdropFilter: trigger ? 'blur(5px)' : 'none',  // Apply blur effect on scroll
       }}>
         <Toolbar sx={{ justifyContent: 'space-between' }}>
           {/* <Typography variant="h6" component="div" sx={{ color: trigger ? 'black' : 'white', fontWeight: '500' }}>
@@ -56,13 +57,13 @@ const Navbar = () => {
             <IconButton
               size="large"
               aria-label="menu"
-              sx={{ color: trigger ? 'black' : 'white' }}
+              sx={{ color: trigger ? 'orange' : 'white' }}
               onClick={toggleDrawer(true)}
             >
               <MenuIcon />
             </IconButton>
           ) : (
-            <List sx={{ display: 'flex', color: trigger ? 'white' : 'white' }}>
+            <List sx={{ display: 'flex', gap:"25px", color: trigger ? 'white' : 'orange' }}>
               {navLinks.map((link) => (
                 <ListItem button key={link.text}>
                   <ListItemText primary={link.text} />

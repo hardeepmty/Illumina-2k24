@@ -10,10 +10,11 @@ import CardComponent from "@/components/fixtures"
 import About0 from "@/components/about_us"
 import styles from './page.module.css'
 import LiveFeed from '@/components/liveScore';
+import BackToTopButton from '@/components/Button';
 
 export default function Home() {
   return (
-    <main style={{backgroundColor:"white"}}>
+    <main>
       <Navbar />
       <Hero />
       <LiveFeed/>
@@ -23,6 +24,12 @@ export default function Home() {
       <CardComponent/>
       <Shirt />
       <ScoreCard/>
+      <Gallery/>
+      <Shirt />
+      <ScoreCard/>
+      <CardComponent/>
+      <EventTable/>
+      <BackToTopButton/>
       <Members />
       <Footer />
     </main>

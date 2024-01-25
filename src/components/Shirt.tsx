@@ -5,10 +5,10 @@ import IlluminaLogo from '../../public/merch.png';
 
 export default function Shirt() {
   return (
-    <Stack
+    <Stack className='shirt'
       sx={{
-        mt: "200px",
-        bgcolor: "orange",
+        mt: "50px",
+        // bgcolor: "orange",
         flexDirection: { xs: "column", md: "row" },
         gap: { xs: "0", md: "50px" },
         alignItems: "center",

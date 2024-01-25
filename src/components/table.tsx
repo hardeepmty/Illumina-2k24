@@ -17,6 +17,7 @@ const TableComponent: React.FC<TableComponentProps> = ({ eventData, day }) => {
 
   return (
     <Table
+      className="table"
       sx={{
         width: "100%",
         [theme.breakpoints.up("md")]: {
@@ -31,7 +32,7 @@ const TableComponent: React.FC<TableComponentProps> = ({ eventData, day }) => {
         <TableRow>
           <TableCell
             style={{
-              border: "1px solid black",
+              border: "1px solid white",
               padding: "8px",
               textAlign: "center",
               height: "80px",
@@ -43,6 +44,7 @@ const TableComponent: React.FC<TableComponentProps> = ({ eventData, day }) => {
               whiteSpace: "nowrap",
               fontWeight: "1000",
               fontSize: "2rem",
+              color:"white"
             }}
             rowSpan={11}
           >
@@ -51,12 +53,13 @@ const TableComponent: React.FC<TableComponentProps> = ({ eventData, day }) => {
 
           <TableCell
             style={{
-              border: "1px solid black",
+              border: "1px solid white",
               padding: "8px",
               textAlign: "center",
               height: "80px",
               fontWeight: "1000",
               fontSize: "2rem",
+              color:"white"
             }}
           >
             Time
@@ -64,12 +67,13 @@ const TableComponent: React.FC<TableComponentProps> = ({ eventData, day }) => {
 
           <TableCell
             style={{
-              border: "1px solid black",
+              border: "1px solid white",
               padding: "8px",
               textAlign: "center",
               height: "80px",
               fontWeight: "1000",
               fontSize: "2rem",
+              color:"white"
             }}
           >
             Event
@@ -79,24 +83,26 @@ const TableComponent: React.FC<TableComponentProps> = ({ eventData, day }) => {
           <TableRow key={index}>
             <TableCell
               style={{
-                border: "1px solid black",
+                border: "1px solid white",
                 padding: "8px",
                 textAlign: "center",
                 height: "80px",
                 width: "25%",
                 fontSize: "1rem",
+                color:"white"
               }}
             >
               {data.time}
             </TableCell>
             <TableCell
               style={{
-                border: "1px solid black",
+                border:"1px solid white",
                 padding: "8px",
                 textAlign: "center",
                 height: "80px",
                 width: "50%",
                 fontSize: "1rem",
+                color:"white"
               }}
             >
               {data.event}

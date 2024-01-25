@@ -48,7 +48,7 @@ const About0: React.FC = () => {
   }, []);
 
   return (
-    <Box display="flex" alignItems="center" justifyContent="center">
+    <Box display="flex" alignItems="center" justifyContent="center" sx={{mt:"50px"}}>
       <Stack
         display="flex"
         alignItems="center"
@@ -64,7 +64,8 @@ const About0: React.FC = () => {
             width: isMobile ? "90%" : `${dm1}px`, 
             height: isMobile ? "auto" : "600px", 
             transition: "width 0.6s ease, height 0.6s ease",
-            backgroundColor: "blue",
+          
+            backgroundColor: "orange",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -73,7 +74,7 @@ const About0: React.FC = () => {
           }}
         >
           {o1 ? (
-            <Typography variant="h5" width="100%">About Us
+            <Typography variant="h5" width="100%" sx={{fontWeight:"bold"}}>ABOUT US
               <Typography variant="body1" width="100%">Sports Society focuses on promoting and fostering sports among the students, faculty and staff of the university. The society aims to provide a platform for students to participate in a wide range of sports activities including both indoor and outdoor sports, and to develop and improve their physical and mental well-being. The Sports Society of VSSUT organizes various sports events, tournaments, and competitions throughout the year such as football, cricket, volleyball, badminton, and many more. Vssut also has sports clubs like VSSUT Cricket Club- VCC, VSSUT Shuttlers-VSS, VSSUT Basketball Club- VBC, VSSUT football club vfc, VSSUT Volleyball Club which provide a highly competitive environment where the talent of students is furnished and sharpened.!</Typography>
             </Typography>
           ) : (
@@ -96,7 +97,7 @@ const About0: React.FC = () => {
             width: isMobile ? "90%" : `${dm2}px`,
             height: isMobile ? "auto" : "600px", 
             transition: "width 0.6s ease, height 0.6s ease",
-            backgroundColor: "green",
+            backgroundColor: "gray",
             borderRadius: "8px",
             display: "flex",
             alignItems: "center",
@@ -105,7 +106,7 @@ const About0: React.FC = () => {
           }}
         >
           {o2 ? (
-            <Typography variant="h5" width="100%">Illumina
+            <Typography variant="h5" width="100%" sx={{fontWeight:"bold"}}>ILLUMINA
               <Typography variant="body1" width="100%">Veer Surendra Sai University of Technology (VSSUT) organizes its yearly sports fest named as ILLUMINA with great elation and valor.The two days sports extravaganza of our University kicks-off with a gallant show. The inaugural day starts off with the lighting of the torch at Burla Temple which kindles the spirit of sportsmanship and togetherness among all the VSSUTians. A number of sports enthusiasts turns up to become a part of the torch march from the temple to the University’s ground lead by Sports Secretary,VSSUT,Burla. They are greeted by a large crowd (students, staff and local people) encouraging and applauding them</Typography>
             </Typography>
           ) : (
@@ -129,7 +130,7 @@ const About0: React.FC = () => {
             width: isMobile ? "90%" : `${dm3}px`, 
             height: isMobile ? "auto" : "600px", 
             transition: "width 0.6s ease, height 0.6s ease",
-            backgroundColor: "orange",
+            backgroundColor: "white",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -138,7 +139,7 @@ const About0: React.FC = () => {
           }}
         >
           {o3 ? (
-            <Typography variant="h5" width="100%">Yoga Club
+            <Typography variant="h5" width="100%" sx={{fontWeight:"bold"}}> YOGA CLUB
               <Typography variant="body1" width="100%">Yoga Club VSSUT is the official member- operated club of Veer Surendra Sai University of Technology, working for the enlightenment of the students of the college by taking them out of their busy and monotonous schedule through Yoga. The club works through organizing health and thought-awareness events and competitions, both on and off the campus. The devoted motto of this society and the events- spreading health awareness and purity of thoughts among the juvenile and energetic minds for the bright future of India, as well as to provide a friendly circle and harmonious environment for the inquisitive people.</Typography>
             </Typography>
           ) : (

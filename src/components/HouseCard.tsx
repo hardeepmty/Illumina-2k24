@@ -18,12 +18,12 @@ const HouseCard :React.FC<HouseCardProps>= ({ houseName, gold, silver, bronze })
   const totalMedals = gold + silver + bronze;
 
   return (
-    <Stack sx={{ paddingLeft: "10px", paddingRight: "10px", flexDirection: "row", justifyContent: 'center' }}>
+    <Stack sx={{ paddingLeft: "10px", paddingRight: "10px",paddingBottom:"50px", flexDirection: "row", justifyContent: 'center' }}>
       <Card className='card' sx={{ mt: "50px", textAlign: "center",   }}>
         <CardContent sx={{ alignContent: "center", padding:"30px" }}>
           {/* Image at the top */}
           {/* <Avatar alt={houseName} src={`/${houseName}.png`} sx={{ width: 85, height: 85, margin: 'auto' }} /> */}
-          <Image alt={houseName} src={`/${houseName}.png`} width={100} height={100} style={{borderRadius:"100%"}} />
+          <Image  alt={houseName} src={`/${houseName}.png`} width={100} height={100} style={{borderRadius:"100%",backgroundColor:"black", opacity:"70%", border:"5px solid orange"}} />
 
           {/* Medals in the middle */}
           <Grid container spacing={1} sx={{ mt: "15px", flexDirection: "row", justifyContent: 'center', gap:"10px" }}>
