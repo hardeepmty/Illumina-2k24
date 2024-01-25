@@ -43,7 +43,6 @@ const TableComponent: React.FC<TableComponentProps> = ({ eventData, day }) => {
         },
       }}
     >
-      <ThemeProvider theme={theme1}>
         <TableBody>
           <TableRow>
             <TableCell
@@ -83,52 +82,51 @@ const TableComponent: React.FC<TableComponentProps> = ({ eventData, day }) => {
               Time
             </TableCell>
 
+          <TableCell
+            style={{
+              border: "1px solid white",
+              padding: "8px",
+              textAlign: "center",
+              height: "80px",
+              fontWeight: "1000",
+              fontSize: "2rem",
+              color:"white"
+            }}
+          >
+            Event
+          </TableCell>
+        </TableRow>
+        {eventData.map((data, index) => (
+          <TableRow key={index}>
             <TableCell
               style={{
                 border: "1px solid white",
                 padding: "8px",
                 textAlign: "center",
                 height: "80px",
-                fontWeight: "1000",
-                fontSize: "2rem",
-                color: "white",
+                width: "25%",
+                fontSize: "1rem",
+                color:"white"
               }}
             >
-              Event
+              {data.time}
+            </TableCell>
+            <TableCell
+              style={{
+                border:"1px solid white",
+                padding: "8px",
+                textAlign: "center",
+                height: "80px",
+                width: "50%",
+                fontSize: "1rem",
+                color:"white"
+              }}
+            >
+              {data.event}
             </TableCell>
           </TableRow>
-          {eventData.map((data, index) => (
-            <TableRow key={index}>
-              <TableCell
-                style={{
-                  border: "1px solid white",
-                  padding: "8px",
-                  textAlign: "center",
-                  height: "80px",
-                  width: "25%",
-                  fontSize: "1rem",
-                  color: "white",
-                }}
-              >
-                <Typography variant="body1">{data.time}</Typography>
-              </TableCell>
-              <TableCell
-                style={{
-                  border: "1px solid white",
-                  padding: "8px",
-                  textAlign: "center",
-                  height: "80px",
-                  width: "50%",
-                  fontSize: "1rem",
-                  color: "white",
-                }}
-              >
-                <Typography variant="body1">{data.event}</Typography>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </ThemeProvider>
+        ))}
+      </TableBody>
     </Table>
   );
 };

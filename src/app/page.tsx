@@ -1,18 +1,17 @@
-"use client";
-import Hero from "@/components/Hero";
-import Footer from "../components/Footer";
-import Members from "../components/Members";
-import Navbar from "../components/Navbar";
-import ScoreCard from "@/components/ScoreCard";
-import Shirt from "../components/Shirt";
-import EventTable from "@/components/table_view";
-import Gallery from "@/components/gallery";
-import CardComponent from "@/components/fixtures";
-import About0 from "@/components/about_us";
-import LiveFeed from "@/components/liveScore";
-import BackToTopButton from "@/components/Button";
-import styles from "./page.module.css";
-import { useRef } from "react";
+import Hero from '@/components/Hero';
+import Footer from '../components/Footer';
+import Members from '../components/Members';
+import Navbar from '../components/Navbar';
+import ScoreCard from '../components/ScoreCard'
+import Shirt from '../components/Shirt';  
+import EventTable from "@/components/table_view"
+import Gallery from "@/components/gallery"
+import CardComponent from "@/components/fixtures"
+import About0 from "@/components/about_us"
+import styles from './page.module.css'
+import LiveFeed from '@/components/liveScore';
+import BackToTopButton from '@/components/Button';
+import { useRef } from 'react';
 
 export default function Home() {
   const home = useRef<HTMLDivElement | null>(null);
