@@ -1,15 +1,24 @@
+"use client";
 import  Stack  from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
 import React from 'react';
 import memberData from '@/library/data/memberData';
 import ScoreCard from './HouseCard';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Monospace',
+    fontWeightBold:"bolder",
+  },
+});
 
 function Members() {
   return (
+    <ThemeProvider theme={theme}>
     <Stack sx={{ gap: '20px', padding: '20px', justifyContent: 'space-between', mt: '50px', mb: '25px', overflowX:"hidden" }}>
-      <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+      <Typography variant="h4" sx={{ fontWeight: 'bold',color:"white" }}>
         ADMINISTRATION
       </Typography>
 
@@ -42,6 +51,7 @@ function Members() {
         ))}
       </Stack>
     </Stack>
+    </ThemeProvider>
   );
 }
 

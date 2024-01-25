@@ -1,7 +1,21 @@
 // pages/about.tsx
 "use client";
 import React, { useState, useEffect } from "react";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography ,ThemeProvider,useTheme,createTheme} from "@mui/material";
+
+const theme1=createTheme({
+  typography:{
+    body1:{
+      fontFamily: "monospace",
+      fontWeight: "bold",
+    },
+    h5:{
+      fontFamily: "monospace",
+      fontWeight: "bold",
+      fontSize:"2rem",
+    }
+  }
+})
 
 const About0: React.FC = () => {
   const [dm1, setDm1] = useState<number>(600);
@@ -48,6 +62,7 @@ const About0: React.FC = () => {
   }, []);
 
   return (
+    <ThemeProvider theme={theme1}>
     <Box display="flex" alignItems="center" justifyContent="center" sx={{mt:"50px"}}>
       <Stack
         display="flex"
@@ -157,6 +172,7 @@ const About0: React.FC = () => {
         </Stack>
       </Stack>
     </Box>
+    </ThemeProvider>
   );
 };
 

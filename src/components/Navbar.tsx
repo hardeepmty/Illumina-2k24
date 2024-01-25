@@ -15,12 +15,19 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import Image from 'next/image';
 
-const Navbar = () => {
+type NavbarProps = {
+  onClic1: () => void;
+  onClic2: () => void;
+  onClic3: () => void;
+  onClic4: () => void;
+};
+
+const Navbar = ({ onClic1, onClic2, onClic3, onClic4 }: NavbarProps) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const isMobileView = useMediaQuery('(max-width: 600px)'); 
+  const isMobileView = useMediaQuery('(max-width: 600px)');
 
   const trigger = useScrollTrigger({
-    threshold: 50, 
+    threshold: 50,
   });
 
   const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -34,25 +41,25 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { text: 'HOME', path: '/' },
-    { text: 'SCHEDULE', path: '/schedule' },
-    { text: 'EVENTS', path: '/events' },
-    { text: 'ADMINISTRATION', path: '/admin' }
+    { text: 'HOME', path: '/', onClick: onClic1 },
+    { text: 'EVENTS', path: '/schedule', onClick: onClic2 },
+    { text: 'GALLERY', path: '/events', onClick: onClic3 },
+    { text: 'ADMINISTRATION', path: '/admin', onClick: onClic4 },
   ];
 
   return (
     <div>
-            <AppBar position="fixed" sx={{ 
-        backgroundColor: trigger ? 'transparent' : 'transparent', 
-        transition: 'background-color 0.5s ease',
-        boxShadow: 'none',
-        backdropFilter: trigger ? 'blur(5px)' : 'none',  // Apply blur effect on scroll
-      }}>
+      <AppBar
+        position="fixed"
+        sx={{
+          backgroundColor: trigger ? 'transparent' : 'transparent',
+          transition: 'background-color 0.5s ease',
+          boxShadow: 'none',
+          backdropFilter: trigger ? 'blur(5px)' : 'none', // Apply blur effect on scroll
+        }}
+      >
         <Toolbar sx={{ justifyContent: 'space-between' }}>
-          {/* <Typography variant="h6" component="div" sx={{ color: trigger ? 'black' : 'white', fontWeight: '500' }}>
-            ILLUMINA
-          </Typography> */}
-          <Image className='illumina' src="/illumina 2024.png" alt='illumina' width={70} height={70}/>
+          <Image className="illumina" src="/illumina 2024.png" alt="illumina" width={70} height={70} />
           {isMobileView ? (
             <IconButton
               size="large"
@@ -63,9 +70,9 @@ const Navbar = () => {
               <MenuIcon />
             </IconButton>
           ) : (
-            <List sx={{ display: 'flex', gap:"25px", color: trigger ? 'white' : 'orange' }}>
+            <List sx={{ display: 'flex', gap: '25px', color: trigger ? 'white' : 'orange' }}>
               {navLinks.map((link) => (
-                <ListItem button key={link.text}>
+                <ListItem button key={link.text} onClick={link.onClick}>
                   <ListItemText primary={link.text} />
                 </ListItem>
               ))}
@@ -74,11 +81,7 @@ const Navbar = () => {
         </Toolbar>
       </AppBar>
 
-      <Drawer
-        anchor="right"
-        open={isDrawerOpen}
-        onClose={toggleDrawer(false)}
-      >
+      <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer(false)}>
         <div
           role="presentation"
           onClick={toggleDrawer(false)}
@@ -86,7 +89,7 @@ const Navbar = () => {
         >
           <List>
             {navLinks.map((link) => (
-              <ListItem button key={link.text}>
+              <ListItem button key={link.text} onClick={link.onClick}>
                 <ListItemText primary={link.text} />
               </ListItem>
             ))}
