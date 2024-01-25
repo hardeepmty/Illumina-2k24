@@ -1,3 +1,4 @@
+"use client"
 import Hero from '@/components/Hero';
 import Footer from '../components/Footer';
 import Members from '../components/Members';
@@ -45,32 +46,40 @@ export default function Home() {
     scrollToRef(explore);
   };
   return (
-    <main>
-      <Navbar
-        onClic1={handleClic1}
-        onClic2={handleClic2}
-        onClic3={handleClic3}
-        onClic4={handleClic4}
-      />
-      <Hero explore={handleClic5} />
-      <LiveFeed />
-      <div ref={gallery}>
-        <Gallery />
-      </div>
-      <div ref={explore}>
-        <About0 />
-      </div>
-      <Shirt />
-      <ScoreCard />
-      <div ref={event}>
-        <EventTable />
-      </div>
-      <CardComponent />
-      <div ref={admin}>
-        <Members />
-      </div>
-      <BackToTopButton />
-      <Footer />
-    </main>
+    <>
+      <head>
+        <title>Illumina 2k24</title>
+        <link rel="shortcut icon" href="illumina 2024.png" type="image/x-icon" />
+      </head>
+      <body>
+        <main>
+          <Navbar
+            onClic1={handleClic1}
+            onClic2={handleClic2}
+            onClic3={handleClic3}
+            onClic4={handleClic4}
+          />
+          <Hero explore={handleClic5} />
+          <LiveFeed />
+          <div ref={gallery}>
+            <Gallery />
+          </div>
+          <div ref={explore}>
+            <About0 />
+          </div>
+          <Shirt />
+          <ScoreCard />
+          <div ref={event}>
+            <EventTable />
+          </div>
+          <CardComponent />
+          <div ref={admin}>
+            <Members />
+          </div>
+          <BackToTopButton />
+          <Footer />
+        </main>
+      </body>
+    </>
   );
 }
