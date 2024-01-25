@@ -50,7 +50,7 @@ const LiveSport: React.FC<LiveSportProps> = ({ sport, game, title }) => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:5000");
+    const newSocket = io("https://illumina-backend.onrender.com");
     setSocket(newSocket);
 
     const scoreUpdateEvent = `scoreUpdated${sport}`;
@@ -77,7 +77,7 @@ const LiveSport: React.FC<LiveSportProps> = ({ sport, game, title }) => {
   const fetchDataFromServer = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/getStoredData${sport}`
+        `https://illumina-backend.onrender.com/getStoredData${sport}`
       );
 
       if (!response.ok) {

@@ -20,7 +20,7 @@ function ScoreCard() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const apiUrl = "http://localhost:5000/events/medal_data";
+    const apiUrl = "https://illumina-backend.onrender.com/events/medal_data";
     axios
       .get<MedalData[]>(apiUrl)
       .then((response) => {
