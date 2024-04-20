@@ -30,7 +30,6 @@ const Gallery: React.FC = () => {
     { src: "/2.jpg", alt: "Image 2" },
     { src: "/3.jpg", alt: "Image 3" },
     { src: "/4.jpg", alt: "Image 4" },
-    { src: "/5.jpg", alt: "Image 5" },
     { src: "/6.jpg", alt: "Image 6" },
   
   ];
